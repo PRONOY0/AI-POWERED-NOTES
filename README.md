@@ -42,7 +42,7 @@ A fullstack AI notes workspace where users can write, organise, and summarise th
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/yourusername/ai-powered-notes.git
+git clone https://github.com/yourusername/AI-POWERED-NOTES.git
 cd ai-powered-notes
 ```
 
