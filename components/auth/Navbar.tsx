@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import axios from "axios";
 import { API } from "@/lib/api";
 import Link from "next/link";
@@ -12,13 +12,28 @@ const navLinks = [
 
 export default function Navbar() {
     const pathname = usePathname();
+    const router = useRouter();
 
     const handleSignOut = async () => {
         try {
             await axios.post(API.auth.logout);
         } catch {
         } finally {
-            window.location.href = "/";
+            router.push("/");
+        }
+    };
+
+    const handleNavClick = async (e: React.MouseEvent, href: string) => {
+        e.preventDefault();
+        try {
+            await axios.get(API.notes);
+            router.push(href);
+        } catch (error) {
+            if (axios.isAxiosError(error) && error.response?.status === 401) {
+                router.push("/");
+            } else {
+                router.push(href);
+            }
         }
     };
 
@@ -31,16 +46,17 @@ export default function Navbar() {
 
                 <div className="flex items-center gap-1">
                     {navLinks.map((link) => (
-                        <a
+                        <Link
                             key={link.href}
                             href={link.href}
+                            onClick={(e) => handleNavClick(e, link.href)}
                             className={`text-[10px] font-mono uppercase tracking-widest px-3 py-1.5 transition-colors ${pathname === link.href
                                     ? "text-cyan-400 bg-cyan-950/30 border border-cyan-900/40"
                                     : "text-gray-500 hover:text-gray-300"
                                 }`}
                         >
                             {link.label}
-                        </a>
+                        </Link>
                     ))}
                 </div>
             </div>
