@@ -57,26 +57,9 @@ export default function AuthPage() {
                             Intelligent<br />
                             <span className="text-cyan-400">Note-taking</span>.
                         </h1>
-                        <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-sm">
+                        <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-xl">
                             Write your thoughts, we&apos;ll handle the summaries, titles, and organization. Professional AI integration for your workspace.
                         </p>
-                    </div>
-                    <div className="flex gap-4">
-                        <div className="px-4 py-2 bg-cyan-950/20 border border-cyan-900/30 rounded flex items-center gap-2">
-                            <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
-                            <span className="text-[11px] font-mono text-cyan-400">AI ENGINE ONLINE</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-px bg-cyan-900/20 border border-cyan-900/30 mt-12 md:mt-0">
-                    <div className="p-6 bg-black">
-                        <div className="text-2xl font-mono text-cyan-400">1.2s</div>
-                        <div className="text-[10px] text-gray-500 uppercase tracking-[0.2em] mt-1">Avg Summary Time</div>
-                    </div>
-                    <div className="p-6 bg-black">
-                        <div className="text-2xl font-mono text-cyan-400">99.9%</div>
-                        <div className="text-[10px] text-gray-500 uppercase tracking-[0.2em] mt-1">Accuracy Rating</div>
                     </div>
                 </div>
             </div>
@@ -149,7 +132,7 @@ export default function AuthPage() {
                             type="submit"
                             className="group w-full bg-cyan-400 hover:bg-cyan-300 text-black font-black py-4 rounded-none text-sm transition-all shadow-[0_0_20px_rgba(34,211,238,0.2)] active:scale-[0.98] flex items-center justify-center gap-2 uppercase tracking-widest"
                         >
-                            {isLogin ? 'Authorize Access' : 'Initialize Account'}
+                            {isLogin ? 'Sign In' : 'Sign Up'}
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </button>
                     </form>
@@ -167,13 +150,9 @@ export default function AuthPage() {
                                 onClick={() => setIsLogin(!isLogin)}
                                 className="text-cyan-400 font-bold ml-1 hover:underline outline-none"
                             >
-                                {isLogin ? 'Create Account' : 'Authorize Access'}
+                                {isLogin ? 'Create Account' : 'Sign In'}
                             </button>
                         </p>
-                        <div className="pt-12 flex justify-between border-t border-cyan-900/10">
-                            <span className="text-[10px] text-gray-700 uppercase">AES-256 Encryption</span>
-                            <span className="text-[10px] text-gray-700 uppercase">Terms of Service</span>
-                        </div>
                     </div>
                 </div>
             </div>
