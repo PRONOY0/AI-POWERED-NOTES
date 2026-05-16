@@ -108,7 +108,7 @@ POST   /api/auth/signup
 POST   /api/auth/login
 POST   /api/auth/logout
 
-GET    /api/notes                    ?q= &tag= &category= &page= &limit=
+GET    /api/notes?q= &tag= &category= &page= &limit=
 POST   /api/notes
 GET    /api/notes/[id]
 PATCH  /api/notes/[id]
