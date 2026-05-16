@@ -23,8 +23,6 @@ export async function middleware(req: NextRequest) {
 
   const token = req.cookies.get("token")?.value;
 
-  console.log(token);
-
   if (!token) {
     return NextResponse.json(
       {
