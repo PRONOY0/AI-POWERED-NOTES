@@ -6,7 +6,7 @@ A fullstack AI notes workspace where users can write, organise, and summarise th
 
 ## What it does
 
-- Create and edit notes with a rich text editor
+- Create and edit notes with a clean distraction free editor
 - Auto-saves changes so nothing is lost
 - Generate AI summaries, action items, and suggested titles from note content
 - Organise notes using tags and categories
